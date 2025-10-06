@@ -1,5 +1,3 @@
-let array = [8, 5, 2, 9, 5, 6, 3];
-
 function bubbleSort(array) {
   let isSorted = false;
   let counter = 0;
@@ -9,21 +7,17 @@ function bubbleSort(array) {
       const current = array[i];
       const next = array[i + 1];
       if (next < current) {
-        swap(array, i, i + 1);
+        swap(i, i + 1, array);
         isSorted = false;
       }
     }
     counter++;
 
   }
-
   return array;
 }
-function swap(array, first, second) {
-  let temp = array[second]; // [8,5], temp = 5, array[5,]
+function swap(first, second, array) {
+  let temp = array[second];
   array[second] = array[first];
   array[first] = temp;
 }
-
-
-console.log(bubbleSort(array));
